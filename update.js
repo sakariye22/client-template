@@ -61,6 +61,21 @@ const sistaDel = document.getElementById('myForm2');
         let urlParams2 = new URLSearchParams(window.location.search);
         console.log(urlParams2.get('id'));
 
+        const de =  await fetch ('http://localhost:3000/apiUser/token',{
+          method:'POST',
+          headers : {
+            'Content-Type' : 'application/json' 
+        
+          },
+        
+        
+          body:JSON.stringify({			"username": "jee",
+          "password" : "12345678"})
+        
+        });
+        const ac = await de.json();
+         console.log(ac.accessToken);
+
 
        const Title = document.getElementById('title2').value;
        const Desc = document.getElementById('desc2').value;
@@ -72,9 +87,7 @@ var headers5 = new Headers();
 
 headers5.append('Accept', 'application/json'); 
 headers5.append('Content-Type', 'application/json'); 
-headers5.append('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImplZSIsImRhdGUiOiIyMDIzLTAyLTAxVDEyOjI5OjUzLjYyMloiLCJpYXQiOjE2NzUzMzUyNTF9.9s9KbkRxLdR1SK15PFJIvkBPySr3k5830u79p8ETyKk');
-
-
+headers5.append('Authorization', 'Bearer '+ ac.accessToken)
         console.log('yes');
 
 
