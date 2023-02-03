@@ -62,6 +62,7 @@ const de =  await fetch ('http://localhost:3000/apiUser/token',{
            <p>${prod.description}
                
            </p>
+           <a href="specific.html?id=${prod._id}">more</a>
            
       </li>`
 
