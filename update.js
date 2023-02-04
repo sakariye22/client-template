@@ -80,7 +80,7 @@ const sistaDel = document.getElementById('myForm2');
        const Title = document.getElementById('title2').value;
        const Desc = document.getElementById('desc2').value;
        const Price = document.getElementById('price2').value;
-       const Stock = document.getElementById('stock2').value
+       const Stock = document.getElementById('stock2').value;
 
           
 var headers5 = new Headers();
